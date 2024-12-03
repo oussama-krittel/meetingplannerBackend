@@ -7,7 +7,6 @@ import com.zenika.meetingplanner.adapters.outbound.jpa.entities.JpaRoom;
 import com.zenika.meetingplanner.adapters.outbound.jpa.repositories.JpaEquipmentRepository;
 import com.zenika.meetingplanner.adapters.outbound.jpa.repositories.JpaMeetingTypeRepository;
 import com.zenika.meetingplanner.adapters.outbound.jpa.repositories.JpaRoomRepository;
-import com.zenika.meetingplanner.domain.Equipment;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -18,7 +17,6 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.ResultMatcher;
 
 
 import java.time.LocalDate;

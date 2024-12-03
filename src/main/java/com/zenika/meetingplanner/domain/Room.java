@@ -4,6 +4,7 @@ import lombok.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 @Builder
@@ -27,7 +28,7 @@ public class Room {
      * @return True if the room is available, false otherwise.
      */
     public boolean isAvailableAt(LocalDate date, int hour) {
-        return !reservations.stream().anyMatch(meeting -> meeting.getDate().isEqual(date)
+        return reservations.stream().noneMatch(meeting -> meeting.getDate().isEqual(date)
                 && (meeting.getHour() == hour || meeting.getHour() == hour + 1 || meeting.getHour() == hour - 1));
     }
 
@@ -38,7 +39,7 @@ public class Room {
      * @return True if the room contains all the required equipment, false otherwise.
      */
     public boolean hasAllRequiredEquipment(List<Equipment> requiredEquipment) {
-        return equipments.containsAll(requiredEquipment);
+        return new HashSet<>(equipments).containsAll(requiredEquipment);
     }
 
     /**

@@ -10,5 +10,4 @@ import java.util.Optional;
 public interface JpaMeetingTypeRepository extends JpaRepository<JpaMeetingType, Long> {
     Optional<JpaMeetingType> findByName(String meetingTypeName);
 
-    boolean existsByName(String name);
 }

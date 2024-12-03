@@ -1,8 +1,6 @@
 package com.zenika.meetingplanner.adapters.outbound.jpa;
 
 import com.zenika.meetingplanner.adapters.outbound.jpa.entities.JpaMeeting;
-import com.zenika.meetingplanner.adapters.outbound.jpa.entities.JpaMeetingType;
-import com.zenika.meetingplanner.adapters.outbound.jpa.entities.JpaRoom;
 import com.zenika.meetingplanner.adapters.outbound.jpa.repositories.JpaMeetingRepository;
 import com.zenika.meetingplanner.adapters.outbound.jpa.repositories.JpaMeetingTypeRepository;
 import com.zenika.meetingplanner.adapters.outbound.jpa.repositories.JpaRoomRepository;

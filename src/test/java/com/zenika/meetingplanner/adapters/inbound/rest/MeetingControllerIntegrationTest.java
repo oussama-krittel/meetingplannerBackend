@@ -8,7 +8,6 @@ import com.zenika.meetingplanner.adapters.outbound.jpa.repositories.JpaEquipment
 import com.zenika.meetingplanner.adapters.outbound.jpa.repositories.JpaMeetingTypeRepository;
 import com.zenika.meetingplanner.adapters.outbound.jpa.repositories.JpaRoomRepository;
 import com.zenika.meetingplanner.common.dtos.MeetingRequestDto;
-import com.zenika.meetingplanner.common.dtos.MeetingResponseDto;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
