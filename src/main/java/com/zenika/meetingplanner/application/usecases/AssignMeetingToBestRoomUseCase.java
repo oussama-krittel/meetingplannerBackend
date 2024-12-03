@@ -83,6 +83,8 @@ public class AssignMeetingToBestRoomUseCase {
         // Save the meeting
         Meeting savedMeeting = meetingRepository.save(meeting);
 
+        System.out.println(savedMeeting.getRoom().getName());
+
         // Return response DTO
         return MeetingResponseDto.builder()
                 .meetingType(savedMeeting.getType().getName())

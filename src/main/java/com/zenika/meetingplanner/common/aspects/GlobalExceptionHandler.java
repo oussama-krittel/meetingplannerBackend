@@ -1,5 +1,8 @@
-package com.zenika.meetingplanner.common.exceptions;
+package com.zenika.meetingplanner.common.aspects;
 
+import com.zenika.meetingplanner.common.exceptions.InvalidMeetingHourException;
+import com.zenika.meetingplanner.common.exceptions.MeetingTypeNotFoundException;
+import com.zenika.meetingplanner.common.exceptions.NoSuitableRoomException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;

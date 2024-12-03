@@ -39,7 +39,9 @@ class RoomRepositoryAdapterTest {
         jpaRoom.setName("Conference Room A");
         jpaRoom.setCapacity(20);
 
-        room = new Room("Conference Room A", 20, null, null);
+        room = Room.builder()
+                .name("Conference Room A")
+                .capacity(20).build();
     }
 
     @Test

@@ -1,17 +1,16 @@
 package com.zenika.meetingplanner.adapters.outbound.jpa.entities;
 
 import jakarta.persistence.*;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Table(name = "equipment")
 @Getter
 @Setter
-@RequiredArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
 @EqualsAndHashCode
+@Builder
 public class JpaEquipment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

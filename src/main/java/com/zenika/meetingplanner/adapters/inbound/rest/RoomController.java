@@ -3,6 +3,7 @@ package com.zenika.meetingplanner.adapters.inbound.rest;
 import com.zenika.meetingplanner.application.usecases.GetBestRoomWithAvailableHoursUseCase;
 import com.zenika.meetingplanner.common.dtos.RoomWithAvailableHoursDto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -27,7 +28,7 @@ public class RoomController {
      * @return RoomWithAvailableHoursDto containing the best room and its available hours.
      */
     @GetMapping("/best-room-with-available-hours")
-    public RoomWithAvailableHoursDto getBestRoomWithAvailableHours(
+    public ResponseEntity<RoomWithAvailableHoursDto> getBestRoomWithAvailableHours(
             @RequestParam String meetingType,
             @RequestParam int requiredCapacity,
             @RequestParam String meetingDate) {
@@ -36,6 +37,7 @@ public class RoomController {
         LocalDate date = LocalDate.parse(meetingDate);
 
         // Call the use case and return the result
-        return getBestRoomWithAvailableHoursUseCase.execute(meetingType, requiredCapacity, date);
+        return ResponseEntity.ok().body(
+                getBestRoomWithAvailableHoursUseCase.execute(meetingType, requiredCapacity, date));
     }
 }

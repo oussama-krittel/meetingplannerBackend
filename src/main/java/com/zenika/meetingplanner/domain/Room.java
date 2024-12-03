@@ -13,6 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Room {
+    private Long id;
     private String name;
     private int capacity;
     private List<Meeting> reservations = new ArrayList<>();

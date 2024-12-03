@@ -58,6 +58,8 @@ class MeetingRepositoryAdapterTest {
     @Test
     void testSave_ShouldSaveMeetingSuccessfully() {
         // Arrange
+        domainMeeting.setType(null);
+        domainMeeting.setRoom(null);
         when(modelMapper.map(domainMeeting, JpaMeeting.class)).thenReturn(jpaMeeting);
         when(jpaMeetingRepository.save(jpaMeeting)).thenReturn(jpaMeeting);
         when(modelMapper.map(jpaMeeting, Meeting.class)).thenReturn(domainMeeting);
@@ -76,6 +78,8 @@ class MeetingRepositoryAdapterTest {
     @Test
     void testSave_ShouldMapDomainToEntityAndEntityToDomainCorrectly() {
         // Arrange
+        domainMeeting.setType(null);
+        domainMeeting.setRoom(null);
         when(modelMapper.map(domainMeeting, JpaMeeting.class)).thenReturn(jpaMeeting);
         when(jpaMeetingRepository.save(jpaMeeting)).thenReturn(jpaMeeting);
         when(modelMapper.map(jpaMeeting, Meeting.class)).thenReturn(domainMeeting);

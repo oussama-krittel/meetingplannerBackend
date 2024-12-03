@@ -4,6 +4,7 @@ import com.zenika.meetingplanner.application.usecases.AssignMeetingToBestRoomUse
 import com.zenika.meetingplanner.common.dtos.MeetingRequestDto;
 import com.zenika.meetingplanner.common.dtos.MeetingResponseDto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -24,9 +25,8 @@ public class MeetingController {
      * @return The saved meeting's details in a response DTO.
      */
     @PostMapping("/assign-to-best-room")
-    public MeetingResponseDto assignMeetingToBestRoom(@RequestBody MeetingRequestDto requestDto) {
-        MeetingResponseDto m = assignMeetingToBestRoomUseCase.execute(requestDto);
-        System.out.println(requestDto.getMeetingType());
-        return m;
+    public ResponseEntity<MeetingResponseDto> assignMeetingToBestRoom(@RequestBody MeetingRequestDto requestDto) {
+        return ResponseEntity.ok().body(
+                assignMeetingToBestRoomUseCase.execute(requestDto));
     }
 }
