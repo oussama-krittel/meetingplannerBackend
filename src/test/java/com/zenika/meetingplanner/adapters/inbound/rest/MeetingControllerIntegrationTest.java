@@ -88,12 +88,6 @@ public class MeetingControllerIntegrationTest {
 
     @Test
     void testAssignMeetingToBestRoom_ShouldReturnMeetingDetails() throws Exception {
-        MeetingRequestDto request = MeetingRequestDto.builder()
-                .meetingType("SPEC")
-                .participantCount(10)
-                .meetingHour(10)
-                .meetingDate("2024-12-01").build();
-
         mockMvc.perform(post("/api/meetings/assign-to-best-room")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("""
